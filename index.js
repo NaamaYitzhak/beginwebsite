@@ -48,5 +48,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function login(username, password) {
-    alert(`ניסית להתחבר עם משתמש: ${username} וסיסמה: ${password}`);
+  fetch("https://orcale2.kokodevs.me:25600/", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    username: username,
+    password: password
+  })
+})
+.then(res => res.json())
+.then(data => console.log(data))
+.catch(err => console.error(err));
+
 }
