@@ -1,4 +1,6 @@
+login("", "");
 document.addEventListener("DOMContentLoaded", function () {
+
     const loginBtn = document.getElementById("loginBtn");
     const loginModal = document.getElementById("loginModal");
     const closeLogin = document.getElementById("closeLogin");
