@@ -82,7 +82,8 @@ header {
 }
 
 .hero-image {
-    background-color: #ccc;
+    background-color:#fdf6e3; /* שמנת */
+;
     height: 300px;
     display: flex;
     justify-content: center;
