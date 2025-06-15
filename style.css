@@ -1,0 +1,279 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    direction: rtl;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #2e7d32; /* ירוק כהה */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.logo-placeholder {
+    order: 1;
+    flex: 1 1 150px;
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    order: 2;
+    margin-left: 1rem;
+}
+
+.nav-menu {
+    order: 3;
+    flex: 3 1 400px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+.nav-menu a {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+    border-radius: 5px;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.login-btn {
+    background: #fdf6e3; /* שמנת */
+    color: #2e7d32;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    order: 4;
+    flex-shrink: 0;
+}
+
+.hero-image {
+    background-color: #ccc;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+}
+
+.school-img {
+    height: 250px;
+    width: auto;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.side-img {
+    height: 200px;
+    width: auto;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.content {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fdf6e3; /* שמנת */
+    margin: 1rem auto;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 700px;
+    margin: 1rem auto 3rem;
+    padding: 0 1rem;
+}
+
+.bottom-images img {
+    width: 100%;
+    border-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.login-content {
+    background-color: #fdf6e3; /* שמנת */
+    width: 90%;
+    max-width: 320px;
+    margin: 10% auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    direction: rtl;
+}
+
+.login-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.login-content label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.login-content input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.login-content button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.7rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #2e7d32;
+}
+
+/* ריספונסיביות לטלפונים */
+@media (max-width: 600px) {
+    header {
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+    .logo-placeholder {
+        order: 1;
+        flex: 0 0 auto;
+    }
+    .logo-img {
+        height: 70px;
+    }
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 65px;
+        right: 0;
+        background-color: #2e7d32;
+        width: 60%;
+        height: calc(100% - 65px);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        order: 3;
+        flex: none;
+        padding-top: 1rem;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    }
+    .nav-menu.open {
+        transform: translateX(0);
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-left: 1rem;
+    }
+    .nav-menu a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+    .login-btn {
+        order: 4;
+        flex: 0 0 auto;
+        margin-left: auto;
+        background: #fdf6e3;
+        color: #2e7d32;
+        font-weight: bold;
+        border-radius: 6px;
+        padding: 0.5rem 1.2rem;
+    }
+    .hero-image {
+        flex-direction: column;
+        height: auto;
+    }
+    .school-img {
+        height: 180px;
+    }
+    .side-img {
+        height: 120px;
+    }
+    .bottom-images {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    .bottom-images img {
+        height: 120px;
+    }
+    .login-content {
+        margin: 20% auto;
+        width: 90%;
+    }
+}
